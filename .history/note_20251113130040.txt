@@ -1,0 +1,4 @@
+    composer create-project laravel/laverel
+   
+   
+    composer require laravel/breeze --dev

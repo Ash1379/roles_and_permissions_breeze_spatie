@@ -1,0 +1,15 @@
+in cmd -    composer create-project laravel/laverel
+in file .env {
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=roles_and_permissions_breeze_spatie
+        DB_USERNAME=root
+        DB_PASSWORD=
+    }
+in cmd -    php artisan migrate 
+in cmd -    composer require laravel/breeze --dev
+in cmd -    php artisan breeze:install
+in cmd -    php artisan migrate
+in cmd -    npm install
+in cmd -    npm run dev
