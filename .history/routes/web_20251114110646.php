@@ -29,14 +29,10 @@ Route::middleware('auth')->group(function () {
 
     });
     // Role Routes
-    Route::controller(RoleController::class)->group(function () {
+    Route::controllers(RoleController::class)->group(function () {
         Route::get('/roles',  'index')->name('roles.index');
         Route::get('/roles/create',  'create')->name('roles.create');
         Route::post('/roles/store',  'store')->name('roles.store');
-        Route::get('roles/{id}/edit','edit')->name('roles.edit');
-        Route::post('/roles/{id}', 'update')->name('roles.update');
-        Route::delete('/roles', 'destroy')->name('roles.destroy');
-
     });
 
 

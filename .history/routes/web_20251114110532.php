@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Permission Routes
-    Route::controller(PermissionController::class)->group(function () {
+    Route::controllers(PermissionController::class)->group(function () {
     Route::get('/permissions/index',  'index')->name('permissions.index');
     Route::get('/permissions/create',  'create')->name('permissions.create');
     Route::post('/permissions/store',  'store')->name('permissions.store');
@@ -29,14 +29,10 @@ Route::middleware('auth')->group(function () {
 
     });
     // Role Routes
-    Route::controller(RoleController::class)->group(function () {
+    Route::controllers(RoleController::class)->group(function () {
         Route::get('/roles',  'index')->name('roles.index');
         Route::get('/roles/create',  'create')->name('roles.create');
         Route::post('/roles/store',  'store')->name('roles.store');
-        Route::get('roles/{id}/edit','edit')->name('roles.edit');
-        Route::post('/roles/{id}', 'update')->name('roles.update');
-        Route::delete('/roles', 'destroy')->name('roles.destroy');
-
     });
 
 

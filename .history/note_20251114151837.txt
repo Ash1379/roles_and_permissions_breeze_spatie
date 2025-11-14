@@ -32,3 +32,4 @@ in cmd-    php artisan make:controller PermissionController
 use jQuery cdn
 ---
 in cmd-    php artisan make:controller RoleController
+https://www.youtube.com/watch?v=zuLZ_HYw-uE&list=PLRB0wzP8AS_GfoZTiqsY1397H8LcXgkMZ&index=8 
