@@ -1,0 +1,31 @@
+in cmd-    composer create-project laravel/laverel
+in file .env {
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=roles_and_permissions_breeze_spatie
+        DB_USERNAME=root
+        DB_PASSWORD=
+    }
+in cmd-    php artisan migrate
+_______________________________________________
+breeze
+
+in cmd-    composer require laravel/breeze --dev
+in cmd-    php artisan breeze:install
+                    blade
+                    0
+in cmd-    php artisan migrate
+in cmd-    npm install
+in cmd-    npm run dev
+in cmd-    php artisan optimize
+in cmd-    php artisan serve
+___________________________________________________
+Spatie
+in cmd-    composer require spatie/laravel-permission
+in cmd-    php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+in cmd-    php artisan config:clear
+in cmd-    php artisan migrate
+____________________________________________________
+
+make:controller

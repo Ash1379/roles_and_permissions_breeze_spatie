@@ -1,0 +1,8 @@
+
+
+
+php artisan optimize
+npm run build
+php artisan serve
+
+
