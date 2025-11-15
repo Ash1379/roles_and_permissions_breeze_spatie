@@ -41,4 +41,3 @@ in cmd-     php artisan make:controller ArticleController -r
 _____________________________________________________
 make:controller
 in cmd-     php artisan make:controller UserController -r
-use model   use Spatie\Permission\Traits\HasRoles;

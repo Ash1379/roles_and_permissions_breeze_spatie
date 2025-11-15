@@ -37,8 +37,6 @@ make:model
 in cmd-     php artisan make:model Article -m
             php artisan migrate
 make:controller
-in cmd-     php artisan make:controller ArticleController -r
+in cmd-     php artisan make:controller ArticleController
+            php artisan make:controller ArticleController -r
 _____________________________________________________
-make:controller
-in cmd-     php artisan make:controller UserController -r
-use model   use Spatie\Permission\Traits\HasRoles;
