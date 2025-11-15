@@ -42,12 +42,12 @@ Route::middleware('auth')->group(function () {
 
     //
       Route::controller(ArticleController::class)->group(function () {
-        Route::get('/articles',  'index')->name('articles.index');
-        Route::get('/articles/create',  'create')->name('articles.create');
-        Route::post('/articles/store',  'store')->name('articles.store');
-        Route::get('articles/{id}/edit','edit')->name('articles.edit');
-        Route::post('/articles/{id}', 'update')->name('articles.update');
-        Route::delete('/articles', 'destroy')->name('articles.destroy');
+        Route::get('/article',  'index')->name('article.index');
+        Route::get('/article/create',  'create')->name('articles.create');
+        // Route::post('/roles/store',  'store')->name('roles.store');
+        // Route::get('roles/{id}/edit','edit')->name('roles.edit');
+        // Route::post('/roles/{id}', 'update')->name('roles.update');
+        // Route::delete('/roles', 'destroy')->name('roles.destroy');
 
     });
 

@@ -36,6 +36,3 @@ ___________________________________________________
 make:model
 in cmd-     php artisan make:model Article -m
             php artisan migrate
-            ----------
-            php artisan make:controller ArticleController
-            php artisan make:controller ArticleController -r

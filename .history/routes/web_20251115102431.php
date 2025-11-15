@@ -46,8 +46,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/articles/create',  'create')->name('articles.create');
         Route::post('/articles/store',  'store')->name('articles.store');
         Route::get('articles/{id}/edit','edit')->name('articles.edit');
-        Route::post('/articles/{id}', 'update')->name('articles.update');
-        Route::delete('/articles', 'destroy')->name('articles.destroy');
+        // Route::post('/roles/{id}', 'update')->name('roles.update');
+        // Route::delete('/roles', 'destroy')->name('roles.destroy');
 
     });
 

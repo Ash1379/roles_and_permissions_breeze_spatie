@@ -33,9 +33,4 @@ use jQuery cdn
 ---
 in cmd-    php artisan make:controller RoleController
 ___________________________________________________
-make:model
-in cmd-     php artisan make:model Article -m
-            php artisan migrate
-            ----------
-            php artisan make:controller ArticleController
-            php artisan make:controller ArticleController -r
+https://www.youtube.com/watch?v=6C4yqJMvmz8&list=PLRB0wzP8AS_GfoZTiqsY1397H8LcXgkMZ&index=9
