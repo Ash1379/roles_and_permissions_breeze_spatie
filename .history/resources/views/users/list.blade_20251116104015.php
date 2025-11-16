@@ -38,7 +38,7 @@
                      <td class="px-6 py-4">{{ \Carbon\Carbon::parse($user->created_at)->format('d M, y') }}</td>
                      <td class="px-6 py-4">
                         <a href="{{ route('users.edit',$user->id) }}" class="bg-slate-700 text-sm rounded-md text-white px-5 py-3 hover:bg-slate-600">Edit</a>
-                        <a href="javascript:void(0);" onclick="deleteUser({{ $user->id }})" class="bg-red-500 text-sm rounded-md text-white px-5 py-3 hover:bg-red-400">Delete</a>
+                         <a href="javascript:void(0);" onclick="deleteUser({{ $role->id }})" class="bg-red-500 text-sm rounded-md text-white px-5 py-3 hover:bg-red-400">Delete</a>
                     </td>
 
                 </tr>

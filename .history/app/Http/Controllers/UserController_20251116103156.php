@@ -12,19 +12,8 @@ use Illuminate\Routing\Controllers\Middleware;
 
 
 
-class UserController extends Controller implements HasMiddleware
+class UserController extends Controller
 {
-
-     public static function middleware(): array
-    {
-        return [
-
-        new Middleware('permission:view user', only: ['index']),
-        new Middleware('permission:edit user', only: ['edit', 'update']),
-        new Middleware('permission:create user', only: ['create', 'store']),
-        new Middleware('permission:delete user', only: ['destroy']), ];
-    }
-
     /**
      * Display a listing of the resource.
      */
@@ -129,16 +118,8 @@ class UserController extends Controller implements HasMiddleware
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request)
+    public function destroy(string $id)
     {
-        $user = User::find($request->id);
-
-     if($user==null){
-            session()->flash('error', 'User not found.');
-            return response()->json(['status' => false]);
-        }
-        $user->delete();
-        session()->flash('success', 'User deleted successfully.');
-        return response()->json(['status' => true]);
+        //
     }
 }

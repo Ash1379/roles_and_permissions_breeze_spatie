@@ -138,7 +138,7 @@ class UserController extends Controller implements HasMiddleware
             return response()->json(['status' => false]);
         }
         $user->delete();
-        session()->flash('success', 'User deleted successfully.');
+        session()->flash('success', 'Permission deleted successfully.');
         return response()->json(['status' => true]);
     }
 }

@@ -4,27 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
-use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
 
-
-
-class UserController extends Controller implements HasMiddleware
+class UserController extends Controller
 {
-
-     public static function middleware(): array
-    {
-        return [
-
-        new Middleware('permission:view user', only: ['index']),
-        new Middleware('permission:edit user', only: ['edit', 'update']),
-        new Middleware('permission:create user', only: ['create', 'store']),
-        new Middleware('permission:delete user', only: ['destroy']), ];
-    }
-
     /**
      * Display a listing of the resource.
      */
@@ -64,15 +48,13 @@ class UserController extends Controller implements HasMiddleware
             return redirect()->route('users.create')->withInput()->withErrors($validator);
 
         }
-        $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password);
         $user->save();
 
         $user->syncRoles($request->role);
 
-        return redirect()->route('users.index')->with('success','User added successfully');
+        return redirect()->route('users.index')->with('success','User Updated successfully');
 
     }
 
@@ -129,16 +111,8 @@ class UserController extends Controller implements HasMiddleware
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request)
+    public function destroy(string $id)
     {
-        $user = User::find($request->id);
-
-     if($user==null){
-            session()->flash('error', 'User not found.');
-            return response()->json(['status' => false]);
-        }
-        $user->delete();
-        session()->flash('success', 'User deleted successfully.');
-        return response()->json(['status' => true]);
+        //
     }
 }

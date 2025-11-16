@@ -134,11 +134,11 @@ class UserController extends Controller implements HasMiddleware
         $user = User::find($request->id);
 
      if($user==null){
-            session()->flash('error', 'User not found.');
+            session()->flash('error', 'Permission not found.');
             return response()->json(['status' => false]);
         }
         $user->delete();
-        session()->flash('success', 'User deleted successfully.');
-        return response()->json(['status' => true]);
-    }
+        session()->flash('success', 'Permission deleted successfully.');
+            return response()->json(['status' => true]);
+}
 }
