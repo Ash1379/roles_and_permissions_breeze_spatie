@@ -1,0 +1,51 @@
+in cmd-    composer create-project laravel/laverel
+in file .env {
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=roles_and_permissions_breeze_spatie
+        DB_USERNAME=root
+        DB_PASSWORD=
+    }
+in cmd-    php artisan migrate
+_______________________________________________
+breeze
+
+in cmd-    composer require laravel/breeze --dev
+in cmd-    php artisan breeze:install
+                    blade
+                    0
+in cmd-    php artisan migrate
+in cmd-    npm install
+in cmd-    npm run dev
+in cmd-    php artisan optimize
+in cmd-    php artisan serve
+___________________________________________________
+Spatie
+in cmd-    composer require spatie/laravel-permission
+in cmd-    php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+in cmd-    php artisan config:clear
+in cmd-    php artisan migrate
+____________________________________________________
+make:controller
+in cmd-    php artisan make:controller PermissionController
+use jQuery cdn
+---
+in cmd-    php artisan make:controller RoleController
+___________________________________________________
+make:model
+in cmd-     php artisan make:model Article -m
+            php artisan migrate
+make:controller
+in cmd-     php artisan make:controller ArticleController -r
+_____________________________________________________
+make:controller
+in cmd-     php artisan make:controller UserController -r
+frame Spatie website and use model:  use Spatie\Permission\Traits\HasRoles;
+-------
+add
+ $middleware->alias([
+            'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
+            'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+            'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+        ]);
