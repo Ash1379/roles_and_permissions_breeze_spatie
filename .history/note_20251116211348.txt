@@ -1,0 +1,98 @@
+in cmd-    composer create-project laravel/laverel
+in file .env {
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=roles_and_permissions_breeze_spatie
+        DB_USERNAME=root
+        DB_PASSWORD=
+    }
+in cmd-    php artisan migrate
+_______________________________________________
+breeze
+
+in cmd-    composer require laravel/breeze --dev
+in cmd-    php artisan breeze:install
+                    blade
+                    0
+in cmd-    php artisan migrate
+in cmd-    npm install
+in cmd-    npm run dev
+in cmd-    php artisan optimize
+in cmd-    php artisan serve
+___________________________________________________
+Spatie
+in cmd-    composer require spatie/laravel-permission
+in cmd-    php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+in cmd-    php artisan config:clear
+in cmd-    php artisan migrate
+____________________________________________________
+make:controller
+in cmd-    php artisan make:controller PermissionController
+use jQuery cdn
+---
+in cmd-    php artisan make:controller RoleController
+___________________________________________________
+make:model
+in cmd-     php artisan make:model Article -m
+            php artisan migrate
+make:controller
+in cmd-     php artisan make:controller ArticleController -r
+_____________________________________________________
+make:controller
+in cmd-     php artisan make:controller UserController -r
+frame Spatie website and use in user model:  use Spatie\Permission\Traits\HasRoles;
+-------
+frame Spatie website and
+https://spatie.be/docs/laravel-permission/v6/basic-usage/middleware
+
+in laravel 12 open /bootstrap/app.php
+--
+  ->withMiddleware(function (Middleware $middleware) {
+        $middleware->alias([
+            'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
+            'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+            'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+        ]);
+    })
+_____________________________________________________
+in side the ech Controllers
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
+----
+public static middleware(): array
+    {
+        return [
+            new Middleware('permission:view users',only: ['index']),
+            new Middleware('permission:edit users',only: ['edit']),
+            new Middleware('permission:create users',only: ['create']),
+            new Middleware('permission:delete users',only: ['destroy']),
+
+        ];
+    }
+_________________________________
+_______________________________________________
+php artisan make:model Product -m
+php artisan make:model Reservoir -m
+php artisan make:model Company -m
+php artisan make:model Driver -m
+php artisan make:model Customer -m
+php artisan make:model Lend -m
+php artisan make:model Payment -m
+php artisan make:model Cheque -m
+php artisan make:model Import -m
+
+
+
+
+
+
+
+php artisan make:model Employee -m
+
+php artisan make:model Sale -m
+php artisan make:model Expense -m
+
+php artisan make:model Transaction -m
+php artisan make:model Tax -m
+php artisan make:model Discount -m
